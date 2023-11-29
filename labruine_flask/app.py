@@ -30,7 +30,7 @@ MESAS = [
 ]
 
 RESERVAS = [
-
+    #Reserva(1, 'B', 2, '2022-02-17')
 ]
 
 CLIENTES = [
@@ -70,7 +70,7 @@ def salvar_reserva():
     cliente = Cliente(email, nome, telefone, quantidade)
     CLIENTES.append(cliente)
 
-    reserva = Reserva(len(RESERVAS)+1, cliente.id, mesa_id, dia)
+    reserva = Reserva(len(RESERVAS)+1, cliente.id, int(mesa_id), dia)
     RESERVAS.append(reserva)
     return 'ok'
 
@@ -97,4 +97,3 @@ def listar_mesas_disponiveis():
 def reservas():
     import json
     return json.dumps([ob.__dict__ for ob in RESERVAS])
-    
