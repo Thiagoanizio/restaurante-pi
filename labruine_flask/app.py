@@ -72,7 +72,7 @@ def salvar_reserva():
 
     reserva = Reserva(len(RESERVAS)+1, cliente.id, int(mesa_id), dia)
     RESERVAS.append(reserva)
-    return 'ok'
+    return 'Reserva Concluída!'
 
 @app.route('/reserva', methods = ['GET'])
 def listar_mesas_disponiveis():
