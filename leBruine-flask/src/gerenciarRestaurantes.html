@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <div class="flex flex-1">
+        <div class="h-screen w-80 bg-red-600 items-center flex flex-col py-4">
+            <img src="assets/le-Bruine-logo.png" alt="">
+            <div class="w-full h-10 px-2 my-4">
+                <input class="bg-white w-full h-full px-4 outline-none rounded-lg" type="text" placeholder="Buscar reservas">
+            </div>
+            <a class="w-full h-11 bg-red-600 flex justify-start items-center px-4 text-white  hover:bg-red-900" href="dashboard.html">Gerenciar reservas</a>
+            <a class="w-full h-11 bg-red-900 flex justify-start items-center px-4 text-white" href="gerenciarRestaurantes.html">Gerenciar restaurantes</a>
+            <a class="w-full h-11 bg-red-600 flex justify-start items-center px-4 text-white hover:bg-red-900" href="gerenciarClientes.html">Gerenciar clientes</a>
+            <a class="w-full h-auto px-4 flex justify-start items-center m-2" href="#">
+                <button class="w-14 h-8 bg-white text-red-600 rounded-md font-medium">Sair</button>
+            </a>
+        </div>
+
+        <div class="w-full h-full ml-6 mt-16 flex flex-wrap gap-4">
+            <div class="w-96 h-auto border-2 border-red-600 rounded-lg p-4 text-red-600 font-semibold">
+                <span class="flex items-center gap-2"><p class="mr-auto font-extrabold text-red-700">Restaurente do STJ</p><a href="#"><img src="assets/icone-editar.svg" alt=""></a> <a href="#"><img src="assets/icone-excluir.svg" alt=""></a></span>
+                <p>CNPJ: <span>Usuario</span></p>
+                <p>Ramo: <span>14/05/2024</span></p>
+                <p>Endereço: <span>Duas pessoas</span></p>
+                <p>Número p/ contato: <span>(81) 98767-0988</span></p>
+            </div>
+            <div class="w-96 h-auto gap-4 border-2 border-red-600 rounded-lg p-4 text-red-600 font-semibold">
+                <span class="flex items-center gap-2"><p class="mr-auto font-extrabold text-red-700">Restaurante Donna Benta</p><a href="#"><img src="assets/icone-editar.svg" alt=""></a> <a href="#"><img src="assets/icone-excluir.svg" alt=""></a></span>
+                <p>Nome: <span>Usuario</span></p>
+                <p>Ramo: <span>14/05/2024</span></p>
+                <p>Endereço: <span>Duas pessoas</span></p>
+                <p>Número p/ contato: <span>(81) 98767-0988</span></p>
+            </div>
+            <div class="w-96 h-auto gap-4 border-2 border-red-600 rounded-lg p-4 text-red-600 font-semibold">
+                <span class="flex items-center gap-2"><p class="mr-auto font-extrabold text-red-700">Restaurante Panela de barro</p><a href="#"><img src="assets/icone-editar.svg" alt=""></a> <a href="#"><img src="assets/icone-excluir.svg" alt=""></a></span>
+                <p>Nome: <span>Usuario</span></p>
+                <p>Ramo: <span>14/05/2024</span></p>
+                <p>Endereço: <span>Duas pessoas</span></p>
+                <p>Número p/ contato: <span>(81) 98767-0988</span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-red-600 w-full text-white p-2 flex flex-col items-center">
+        <p class="text-base mb-2">Acompanhe as redes sociais do Le Bruine:</p>
+        <div class="flex items-center justify-center gap-3">
+            <a href='https://www.instagram.com/' target="blank" passHref>
+            <div class="cursor-pointer">
+                <img src="assets/instagram-ico.svg" alt="logo instagram" width={24} height={24} />
+            </div>
+            </a>
+            <a href='https://www.facebook.com/' target="blank" passHref>
+            <div class="cursor-pointer">
+                <img src="assets/facebook-ico.svg"alt="logo facebook" width={24} height={24} />
+            </div>
+            </a>
+        </div>
+        <p class="text-base my-2">Rua Francisco Carraca de Freitas, 270, Boa Vista, Garanhuns-PE</p>
+        <p class="text-base">Le Bruine © 2024 - Todos os direitos reservados / Desenvolvido por: F.A Soluções Tecnológicas - Yuri Baruk Freitas | Thiago Anízio Miranda</p>
+    </footer>
+</body>
+
+</html>

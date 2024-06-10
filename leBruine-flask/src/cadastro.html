@@ -15,13 +15,13 @@
     <div class="w-80 h-auto gap-8 absolute right-44 top-20 p-6 bg-white rounded-2xl shadow-md"> <!--formulario de login-->
         <p class="font-normal text-sm mb-4">Bem-Vindo ao <span class="text-red-600 font-bold">Lebruine</span></p>
         <p class="text-3xl font-semibold mb-4">Criar conta</p>
-        <div class="w-full">
-            <input class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="email" placeholder="Insira seu e-mail">
-            <input class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="text" placeholder="Nome completo">
-            <input class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="number" placeholder="Telefone">
-            <input class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="password" placeholder="Senha">
+        <div class="w-full" id="formulario">
+            <input id="emailUsuario" class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="email" placeholder="Insira seu e-mail">
+            <input id="nomeUsuario" class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="text" placeholder="Nome completo">
+            <input id="numeroUsuario" class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="number" placeholder="Telefone">
+            <input id="senhaUsuario" class="w-full bg-gray-200 border-red-600 p-3 mb-5 rounded-lg outline-none" type="password" placeholder="Senha">
         </div>
-        <button class="w-full p-2 mb-5 rounded-md bg-red-600 text-white font-semibold">Cadastrar</button>
+        <button type="button" id="cadastroCliente" class="w-full p-2 mb-5 rounded-md bg-red-600 text-white font-semibold">Cadastrar</button>
         <p class="text-gray-400 font-normal">Já tem uma conta?</p>
         <a class="text-red-600 font-bold" href="login.html">Faça login</a>
     </div> <!--Fim formulário de login-->
