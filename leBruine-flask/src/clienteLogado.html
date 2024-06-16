@@ -28,11 +28,44 @@
             </button>
         </div>
         
-        <div class="flex gap-4">
-            <button type="button" class="text-red-600 font-semibold w-auto p-3 h-12 flex justify-center  bg-white rounded-md border-2 cursor-pointer border-transparent" id="menu-button" aria-expanded="true" aria-haspopup="true">Perfil
-                <img src="assets/arrow_drop_down.svg" alt="">
-            </button>
+        <div class="flex">
+            <div class="relative inline-block text-left">
+                <div>
+                    <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-semibold text-red-600 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                        Menu
+                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+        
+                <!-- Dropdown menu, show/hide based on menu state. -->
+                <div class="z-10 origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="dropdown-menu">
+                    <div class="py-1" role="none">
+                        <!-- Active: "bg-gray-100", Not Active: "" -->
+                        <a href="perfilUsuario.html" class="text-red-600 flex items-end gap-2 px-4 py-2 text-sm font-medium hover:bg-slate-100" role="menuitem" tabindex="-1" id="menu-item-0"><img src="assets/minha-conta.svg" alt="">Minha conta</a>
+                        <a href="minhasReservas.html" class="text-red-600 flex items-end gap-2 px-4 py-2 text-sm font-medium hover:bg-slate-100" role="menuitem" tabindex="-1" id="menu-item-1"><img src="assets/minhas-reservas.svg" alt="">Minhas reservas</a>
+                        <a href="index.html" class="text-red-600 flex items-end gap-2 px-4 py-2 text-sm font-medium hover:bg-slate-100" role="menuitem" tabindex="-1" id="menu-item-2"><img src="assets/sair.svg" alt="">Sair</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <script>
+            document.getElementById('menu-button').addEventListener('click', function() {
+                var menu = document.getElementById('dropdown-menu');
+                menu.classList.toggle('hidden');
+            });
+    
+            // Optionally close the dropdown when clicking outside of it
+            window.addEventListener('click', function(event) {
+                var menuButton = document.getElementById('menu-button');
+                var dropdownMenu = document.getElementById('dropdown-menu');
+                if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.add('hidden');
+                }
+            });
+        </script>
         
     </div> <!--Fim do header-->
 
@@ -75,58 +108,58 @@
         </a>
     </div> <!--fim carrossel-->
 
-    <div class="flex flex-grow flex-wrap items-center justify-center gap-4 mx-6"> <!--Restaurantes-->
+    <div class="flex flex-grow flex-wrap items-center justify-center gap-4 mx-6" id="restaurantList"> <!--Restaurantes-->
 
-        <div id="restaurante" class="w-auto flex gap-4 items-center rounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6">
+        <div class="w-auto flex gap-4 items-center rounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6 restaurant-item">
             <img class="w-32 h-32" src="assets/donna-benta.png" alt="">
             <div class="w-80">
-                <p class="font-bold text-red-600 text-xl">Restaurante Donna Benta</p>
-                <p class="font-normal text-gray-400 text-wrap text-sm">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
+                <p class="font-bold text-red-600 text-xl restaurant-name">Restaurante Donna Benta</p>
+                <p class="font-normal text-gray-400 text-wrap text-sm endereco-restaurante">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
                 <p class="font-bold text-base text-red-600">(87) 99909-00001</p>
                 <a href="reservar.html" class="w-36 bg-red-600 font-semibold text-sm rounded-lg text-white flex flex-row gap-1 h-8 items-center px-2">Fazer reserva<img src="assets/check-button.svg" alt=""></a>
             </div>
         </div>
-        <div id="restaurante" class="w-auto flex gap-4 items-center rounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6">
+        <div  class="w-auto flex gap-4 items-center rounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6 restaurant-item">
             <img class="w-32 h-32" src="assets/feijao-verde.png" alt="">
             <div class="w-80">
-                <p class="font-bold text-red-600 text-xl">Restaurante Feijão verde</p>
-                <p class="font-normal text-gray-400 text-wrap text-sm">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
+                <p class="font-bold text-red-600 text-xl restaurant-name">Restaurante Feijão verde</p>
+                <p class="font-normal text-gray-400 text-wrap text-sm endereco-restaurante">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
                 <p class="font-bold text-base text-red-600">(87) 99909-00001</p>
                 <a href="reservar.html" class="w-36 bg-red-600 font-semibold text-sm rounded-lg text-white flex flex-row gap-1 h-8 items-center px-2">Fazer reserva<img src="assets/check-button.svg" alt=""></a>
             </div>
         </div>
-        <div id="restaurante" class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6">
+        <div class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6 restaurant-item">
             <img class="w-32 h-32" src="assets/cheiro-verde.png" alt="">
             <div class="w-80">
-                <p class="font-bold text-red-600 text-xl">Restaurante Cheiro verde</p>
-                <p class="font-normal text-gray-400 text-wrap text-sm">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
+                <p class="font-bold text-red-600 text-xl restaurant-name">Restaurante Cheiro verde</p>
+                <p class="font-normal text-gray-400 text-wrap text-sm endereco-restaurante">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
                 <p class="font-bold text-base text-red-600">(87) 99909-00001</p>
                 <a href="reservar.html" class="w-36 bg-red-600 font-semibold text-sm rounded-lg text-white flex flex-row gap-1 h-8 items-center px-2">Fazer reserva<img src="assets/check-button.svg" alt=""></a>
             </div>
         </div>
-        <div id="restaurante" class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6">
+        <div class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6 restaurant-item">
             <img class="w-32 h-32" src="assets/cheiro-verde.png" alt="">
             <div class="w-80">
-                <p class="font-bold text-red-600 text-xl">Restaurante Cheiro verde</p>
-                <p class="font-normal text-gray-400 text-wrap text-sm">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
+                <p class="font-bold text-red-600 text-xl restaurant-name">Restaurante Cheiro verde</p>
+                <p class="font-normal text-gray-400 text-wrap text-sm endereco-restaurante">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
                 <p class="font-bold text-base text-red-600">(87) 99909-00001</p>
                 <a href="reservar.html" class="w-36 bg-red-600 font-semibold text-sm rounded-lg text-white flex flex-row gap-1 h-8 items-center px-2">Fazer reserva<img src="assets/check-button.svg" alt=""></a>
             </div>
         </div>
-        <div id="restaurante" class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6">
+        <div class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6 restaurant-item">
             <img class="w-32 h-32" src="assets/cheiro-verde.png" alt="">
             <div class="w-80">
-                <p class="font-bold text-red-600 text-xl">Restaurante Cheiro verde</p>
-                <p class="font-normal text-gray-400 text-wrap text-sm">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
+                <p class="font-bold text-red-600 text-xl restaurant-name">Restaurante Cheiro verde</p>
+                <p class="font-normal text-gray-400 text-wrap text-sm endereco-restaurante">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
                 <p class="font-bold text-base text-red-600">(87) 99909-00001</p>
                 <a href="reservar.html" class="w-36 bg-red-600 font-semibold text-sm rounded-lg text-white flex flex-row gap-1 h-8 items-center px-2">Fazer reserva<img src="assets/check-button.svg" alt=""></a>
             </div>
         </div>
-        <div id="restaurante" class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6">
+        <div class="w-auto flex gap-4 items-centerrounded-2xl hover:bg-slate-100 hover:shadow-lg hover:cursor-pointer p-6 restaurant-item">
             <img class="w-32 h-32" src="assets/cheiro-verde.png" alt="">
             <div class="w-80">
-                <p class="font-bold text-red-600 text-xl">Restaurante Cheiro verde</p>
-                <p class="font-normal text-gray-400 text-wrap text-sm">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
+                <p class="font-bold text-red-600 text-xl restaurant-name">Restaurante Cheiro verde</p>
+                <p class="font-normal text-gray-400 text-wrap text-sm endereco-restaurante">Rua Napoleão Bonaparte, 32, Boa Vista - Garanhuns-PE</p>
                 <p class="font-bold text-base text-red-600">(87) 99909-00001</p>
                 <a href="reservar.html" class="w-36 bg-red-600 font-semibold text-sm rounded-lg text-white flex flex-row gap-1 h-8 items-center px-2">Fazer reserva<img src="assets/check-button.svg" alt=""></a>
             </div>
@@ -151,15 +184,26 @@
         <p class="text-base my-2">Rua Francisco Carraca de Freitas, 270, Boa Vista, Garanhuns-PE</p>
         <p class="text-base">Le Bruine © 2024 - Todos os direitos reservados / Desenvolvido por: F.A Soluções Tecnológicas - Yuri Baruk Freitas | Thiago Anízio Miranda</p>
     </footer>
+
+    <script>
+        function searchRestaurants() {
+            const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+            const restaurants = document.querySelectorAll('.restaurant-item');
+
+            restaurants.forEach(restaurant => {
+                const name = restaurant.querySelector('.restaurant-name').textContent.toLowerCase();
+                const address = restaurant.querySelector('.endereco-restaurante').textContent.toLowerCase();
+
+                if (name.includes(searchTerm) || address.includes(searchTerm)) {
+                    restaurant.style.display = 'flex';
+                } else {
+                    restaurant.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('searchBar').addEventListener('input', searchRestaurants);
+    </script>
 </body>
-<script>
 
-</script>
 </html>
-
-<!-- <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-    Options
-    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-    </svg>
-  </button> -->
